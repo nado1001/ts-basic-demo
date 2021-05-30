@@ -12,8 +12,8 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    // import exportの時拡張子を除く
-    extenstions: ['.ts', '.js']
+    // import文でファイル拡張子を書かずに名前解決するための設定
+    extensions:['.ts','.js'] // Reactの.tsxや.jsxの拡張子も扱いたい場合は配列内に追加する
   },
   devServer: {
     // ローカルサーバーが参照するディレクトリ
