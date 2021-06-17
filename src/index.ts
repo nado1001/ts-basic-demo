@@ -32,7 +32,15 @@
 // tupleSample()
 
 // 07. ジェネリック型とポリフォーリズム
-import genericsBasicSample from './generics/basic'
-import genericsAdvancedSample from './generics/advanced'
-genericsBasicSample()
-genericsAdvancedSample()
+// import genericsBasicSample from './generics/basic'
+// import genericsAdvancedSample from './generics/advanced'
+// genericsBasicSample()
+// genericsAdvancedSample()
+
+// 「10.非同期処理の型定義」のサンプルコード
+// import callbackSample from './asynchronous/callback'
+// import promiseSample from './asynchronous/promise'
+import asyncAwaitSample from './asynchronous/asyncAwait'
+// callbackSample()
+// promiseSample()
+asyncAwaitSample()
