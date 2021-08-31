@@ -1,4 +1,4 @@
-export default function genericsBasicSample() {
+export default function genericsBasicSample(): void {
   // ジェネリック型を使わない場合
   const stringReduce = (array: string[], initialValue: string): string => {
     let result = initialValue
