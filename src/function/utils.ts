@@ -12,29 +12,22 @@ interface Date {
  * @param {string} format      -変換したいフォーマット
  * @return {string}
  */
-const formatDate = (date: any, format: string) => {
-  if (typeof date === 'string') {
-    date = new Date(date)
-  }
 
+export const formatDate = (format: string = 'yyyy/MM/dd', date: Date = new Date()): string => {
   // invailid date の場合は 空文字設定
   if (!date || Number.isNaN(date.getDate())) {
     return ''
   }
-
-  format = format.replace(/yyyy/g, date.getFullYear())
-  format = format.replace(/yy/g, date.getYear())
+  format = format.replace(/yyyy/g, date.getFullYear().toString())
   format = format.replace(/MM/g, ('0' + (date.getMonth() + 1)).slice(-2))
-  format = format.replace(/M/g, date.getMonth() + 1)
   format = format.replace(/dd/g, ('0' + date.getDate()).slice(-2))
-  format = format.replace(/d/g, date.getDate())
   format = format.replace(/HH/g, ('0' + date.getHours()).slice(-2))
   format = format.replace(/mm/g, ('0' + date.getMinutes()).slice(-2))
   format = format.replace(/ss/g, ('0' + date.getSeconds()).slice(-2))
   format = format.replace(/SSS/g, ('00' + date.getMilliseconds()).slice(-3))
-  format = format.replace(/w/g, ['日', '月', '火', '水', '木', '金', '土'][date.getDay()])
   return format
 }
+
 /**
 /**
   * ページネーション範囲の取得
@@ -45,7 +38,7 @@ const formatDate = (date: any, format: string) => {
   * @param {*} sideWidth 左右の長さ
   * @returns
   */
-const getPaginationRange = (currentPage: number, totalPage: number, sideWidth = 3) => {
+export const getPaginationRange = (currentPage: number, totalPage: number, sideWidth = 3): Array<number> => {
   const renge: Array<number> = []
 
   if (!totalPage || totalPage <= 0) {
@@ -74,6 +67,6 @@ const getPaginationRange = (currentPage: number, totalPage: number, sideWidth = 
  * @param {*} num
  * @returns
  */
-const comma = (num: number) => {
+export const comma = (num: number): string => {
   return String(num).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')
 }
